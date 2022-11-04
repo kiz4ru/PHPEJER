@@ -1,17 +1,25 @@
 <?php
-servidor = "localhost";
-$usuario = "prueba";
-$contra = "prueba123";
-$bd = "conectar";
+function connectar(){
+    try {
+        $servidor = "localhost";
+        $usuario = "prueba";
+        $contra = "prueba123";
+        $bd = "conectar";
+        $dbh = new PDO ("mysql:servidor=$servidor;db=$db", $usuario, $contra);
+        return $dbh;
 
-$conexion = @mysql_connect($servidor, $usuario, $contrasenha); 
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return null;
 
-if (!$conexion) {
-    die('<strong>No pudo conectarse:</strong> ' . mysql_error());
-}else {
-    echo "Conectado ala base de datos";
+        
+    }
+
+
+
+    
 }
 
-mysql_select_db($BD, $conexion) or die(mysql_error($conexion)); 
+
 
 ?>
