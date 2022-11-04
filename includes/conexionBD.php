@@ -1,5 +1,6 @@
 <?php
-servidor = "localhost";
+
+$servidor = "localhost";
 $usuario = "prueba";
 $contra = "prueba123";
 $bd = "conectar";
